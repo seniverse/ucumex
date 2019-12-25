@@ -85,5 +85,3 @@ defmodule UcumexTest do
     assert op.(1) - 33.8 < 0.001
   end
 end
-
-# m|s|g|(rad)|K|C|(cd)|
