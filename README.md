@@ -4,8 +4,8 @@ A elixir lib according to [THE UNIFIED CODE FOR UNITS OF MEASURE](http://unitsof
 
 ## Note!
 
-- **Not Support Comment**
-- **Special Units are not Support Except Fahrenheit Degree and Celsius degree**
+- **Comment is not Supported**
+- **Special Units are not Supported Except Fahrenheit Degree and Celsius Degree**
 
 ## Examples
 
