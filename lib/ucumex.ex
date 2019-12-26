@@ -5,7 +5,7 @@ defmodule Ucumex do
 
   require Logger
 
-  @spec convertor(String.t, String.t) :: {:ok, (number -> float)}
+  @spec convertor(String.t, String.t) :: {:error, :unit_not_match} | {:ok, (number -> float)}
   def convertor("[degF]", "Cel") do
     {:ok, fn v -> (v - 32) / 1.8 end}
   end
@@ -24,6 +24,7 @@ defmodule Ucumex do
     end
   end
 
+  @spec unit_to_std(String.t) :: {float, [{String.t, integer}]}
   def unit_to_std(unit) do
     unit
     |> to_bin_op
