@@ -12,6 +12,18 @@ defmodule Ucumex do
   def convertor("Cel", "[degF]") do
     {:ok, fn v -> v * 1.8 + 32 end}
   end
+  def convertor("Cel", "K") do
+    {:ok, fn v -> v + 273.15 end}
+  end
+  def convertor("K", "Cel") do
+    {:ok, fn v -> v - 273.15 end}
+  end
+  def convertor("[degF]", "K") do
+    {:ok, fn v -> (v - 32) * 5 / 9 + 273.15 end}
+  end
+  def convertor("K", "[degF]") do
+    {:ok, fn v -> (v - 273.15) * 9 / 5 + 32 end}
+  end
   def convertor(from, to) do
     {factor_from, unit_from} = unit_to_std(from)
     {factor_to,   unit_to}   = unit_to_std(to)
