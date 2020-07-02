@@ -28,7 +28,7 @@ defmodule Ucumex do
     {factor_from, unit_from} = unit_to_std(from)
     {factor_to,   unit_to}   = unit_to_std(to)
 
-    case validate_unit(unit_from, unit_to) do
+    case validate_unit(:lists.sort(unit_from), :lists.sort(unit_to)) do
       :ok ->
         {:ok, fn v -> v * factor_from / factor_to end}
       :error ->
